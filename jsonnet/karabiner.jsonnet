@@ -57,21 +57,6 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               f.outputKey('left_shift', ['command', 'control', 'option']),
             ),
 
-            f.rule(
-              'Hyper + up/down arrows -> Scroll up/down',
-              [
-                f.manipulator(
-                  f.input('down_arrow', keys.hyper),
-                  f.outputKey({ vertical_wheel: 150 }, key_code='mouse_key'),
-                ),
-
-                f.manipulator(
-                  f.input('up_arrow', keys.hyper),
-                  f.outputKey({ vertical_wheel: -150 }, key_code='mouse_key'),
-                ),
-              ]
-            ),
-
             f.rule_1m(
               'Hyper + ? -> Help menu',
               f.input('slash', keys.hyper),
@@ -149,18 +134,18 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
             ],),
 
             f.rule(
-              'sd_layer + J/L/I/K -> Left/Right/Up/Down',
+              'sd_layer + J/L/I/K -> Mouse Wheel Left/Right/Up/Down',
               [
                 f.manipulator(
                   f.input(p[0]),
-                  f.outputKey(p[1]),
+                  f.outputKey({ [p[1]]: p[2] }, key_code='mouse_key'),
                   conditions.layer('sd'),
                 )
                 for p in [
-                  ['j', 'left_arrow'],
-                  ['l', 'right_arrow'],
-                  ['i', 'up_arrow'],
-                  ['k', 'down_arrow'],
+                  ['j', 'horizontal_wheel', 150],
+                  ['l', 'horizontal_wheel', -150],
+                  ['i', 'vertical_wheel', -150],
+                  ['k', 'vertical_wheel', 150],
                 ]
               ]
             ),

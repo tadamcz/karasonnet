@@ -226,61 +226,6 @@
                   ]
                },
                {
-                  "description": "Hyper + up/down arrows -> Scroll up/down",
-                  "manipulators": [
-                     {
-                        "description": "",
-                        "from": {
-                           "key_code": "down_arrow",
-                           "modifiers": {
-                              "mandatory": [
-                                 "shift",
-                                 "command",
-                                 "control",
-                                 "option"
-                              ],
-                              "optional": [
-                                 "any"
-                              ]
-                           }
-                        },
-                        "to": [
-                           {
-                              "mouse_key": {
-                                 "vertical_wheel": 150
-                              }
-                           }
-                        ],
-                        "type": "basic"
-                     },
-                     {
-                        "description": "",
-                        "from": {
-                           "key_code": "up_arrow",
-                           "modifiers": {
-                              "mandatory": [
-                                 "shift",
-                                 "command",
-                                 "control",
-                                 "option"
-                              ],
-                              "optional": [
-                                 "any"
-                              ]
-                           }
-                        },
-                        "to": [
-                           {
-                              "mouse_key": {
-                                 "vertical_wheel": -150
-                              }
-                           }
-                        ],
-                        "type": "basic"
-                     }
-                  ]
-               },
-               {
                   "description": "Hyper + ? -> Help menu",
                   "manipulators": [
                      {
@@ -657,7 +602,7 @@
                   ]
                },
                {
-                  "description": "sd_layer + J/L/I/K -> Left/Right/Up/Down",
+                  "description": "sd_layer + J/L/I/K -> Mouse Wheel Left/Right/Up/Down",
                   "manipulators": [
                      {
                         "conditions": [
@@ -678,7 +623,9 @@
                         },
                         "to": [
                            {
-                              "key_code": "left_arrow"
+                              "mouse_key": {
+                                 "horizontal_wheel": 150
+                              }
                            }
                         ],
                         "type": "basic"
@@ -702,7 +649,9 @@
                         },
                         "to": [
                            {
-                              "key_code": "right_arrow"
+                              "mouse_key": {
+                                 "horizontal_wheel": -150
+                              }
                            }
                         ],
                         "type": "basic"
@@ -726,7 +675,9 @@
                         },
                         "to": [
                            {
-                              "key_code": "up_arrow"
+                              "mouse_key": {
+                                 "vertical_wheel": -150
+                              }
                            }
                         ],
                         "type": "basic"
@@ -750,7 +701,9 @@
                         },
                         "to": [
                            {
-                              "key_code": "down_arrow"
+                              "mouse_key": {
+                                 "vertical_wheel": 150
+                              }
                            }
                         ],
                         "type": "basic"
