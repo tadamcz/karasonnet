@@ -22,7 +22,17 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
         selected: true,
         name: 'Generated from karabiner.jsonnet',
         complex_modifications: {
+
+          parameters: {
+            'basic.simultaneous_threshold_milliseconds': 20,
+            'basic.to_delayed_action_delay_milliseconds': 500,
+            'basic.to_if_alone_timeout_milliseconds': 1000,
+            'basic.to_if_held_down_threshold_milliseconds': 500,
+            'mouse_motion_to_scroll.speed': 100,
+          },
           rules: [
+
+
             f.rule_1m(
               'Paste without formatting',
               f.input('v', ['command', 'option']),
@@ -119,6 +129,62 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               f.outputKey('right_arrow', ['command']),
               conditions.kinesis_condition
             ),
+
+            f.layer('sd', [
+              {
+                key_code: 's',
+              },
+              {
+                key_code: 'd',
+              },
+            ],),
+
+            f.layer('fg', [
+              {
+                key_code: 'f',
+              },
+              {
+                key_code: 'g',
+              },
+            ],),
+
+            f.rule(
+              'sd_layer + J/L/I/K -> Left/Right/Up/Down',
+              [
+                f.manipulator(
+                  f.input(p[0]),
+                  f.outputKey(p[1]),
+                  conditions.layer('sd'),
+                )
+                for p in [
+                  ['j', 'left_arrow'],
+                  ['l', 'right_arrow'],
+                  ['i', 'up_arrow'],
+                  ['k', 'down_arrow'],
+                ]
+              ]
+            ),
+
+
+            f.rule(
+              'fg_layer + J/L/I/K/M -> Move windows with Rectangle.app',
+              [
+                f.manipulator(
+                  f.input(k),
+                  f.outputKey(k, keys.hyper),
+                  conditions.layer('fg'),
+                )
+                for k in [
+                  'j',
+                  'l',
+                  'i',
+                  'k',
+                  'm',
+                ]
+              ]
+            ),
+
+
           ],
         },
 

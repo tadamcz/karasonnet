@@ -12,4 +12,9 @@ local devices = import 'devices.libsonnet';
     identifiers: [devices.apple_identifier],
   }],
 
+  layer(name):: [{
+    name: 'layer_' + name,
+    type: 'variable_if',
+    value: 1,
+  }],
 }

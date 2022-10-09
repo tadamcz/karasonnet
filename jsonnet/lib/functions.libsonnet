@@ -113,4 +113,37 @@ local rule(description, manipulators) = {
       shell_command: command,
     },
   },
+
+
+  layer(name, simultaneous):: rule('layer_' + name, [
+    {
+      from: {
+        simultaneous: simultaneous,
+        simultaneous_options: {
+          detect_key_down_uninterruptedly: true,
+          key_down_order: 'insensitive',
+          key_up_order: 'insensitive',
+          key_up_when: 'any',
+          to_after_key_up: [
+            {
+              set_variable: {
+                name: 'layer_' + name,
+                value: 0,
+              },
+            },
+          ],
+        },
+      },
+      to: [
+        {
+          set_variable: {
+            name: 'layer_' + name,
+            value: 1,
+          },
+        },
+      ],
+      type: 'basic',
+    },
+  ]),
+
 }
