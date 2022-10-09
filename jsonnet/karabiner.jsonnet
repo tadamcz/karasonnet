@@ -115,7 +115,7 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               conditions.kinesis_condition
             ),
 
-            f.layer('sd', [
+            f.layer('sd', simultaneous=[
               {
                 key_code: 's',
               },
@@ -124,7 +124,7 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               },
             ],),
 
-            f.layer('fg', [
+            f.layer('fg', simultaneous=[
               {
                 key_code: 'f',
               },

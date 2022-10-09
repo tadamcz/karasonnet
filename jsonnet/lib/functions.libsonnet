@@ -114,7 +114,14 @@ local rule(description, manipulators) = {
     },
   },
 
-
+  // layer
+  //
+  // activate a layer with 1 or more keys pressed simultaneously
+  //
+  // name (string)
+  //
+  // simultaneous (array, required)
+  //   array of keys
   layer(name, simultaneous):: rule('layer_' + name, [
     {
       from: {
