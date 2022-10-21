@@ -124,12 +124,12 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               },
             ],),
 
-            f.layer('fg', simultaneous=[
+            f.layer('df', simultaneous=[
               {
-                key_code: 'f',
+                key_code: 'd',
               },
               {
-                key_code: 'g',
+                key_code: 'f',
               },
             ],),
 
@@ -152,12 +152,12 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
 
 
             f.rule(
-              'fg_layer + J/L/I/K/M -> Move windows with Rectangle.app',
+              'df_layer + J/L/I/K/M/H -> Move windows with Rectangle.app',
               [
                 f.manipulator(
                   f.input(k),
                   f.outputKey(k, keys.hyper),
-                  conditions.layer('fg'),
+                  conditions.layer('df'),
                 )
                 for k in [
                   'j',
@@ -165,6 +165,7 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
                   'i',
                   'k',
                   'm',
+                  'h',
                 ]
               ]
             ),
