@@ -64,12 +64,17 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
             ),
 
             f.rule_1m(
-              'PrintScr -> Switch windows of current application [Kinesis]',
-              f.input('print_screen'),
-              f.outputKey('grave_accent_and_tilde', ['command']),
-              conditions.kinesis_condition,
+              // For videos. Other shortcuts are defined in Shottr.
+              'Hyper + 2 -> MacOS native screenshot',
+              f.input('2', keys.hyper),
+              f.outputKey('5', ['command', 'shift']),
             ),
 
+            f.rule_1m(
+              'Option + Tab -> Switch windows of current application',
+              f.input('tab', ['option']),
+              f.outputKey('grave_accent_and_tilde', ['command']),
+            ),
 
             f.rule_1m(
               'Left shift -> Shift+Tab [Kinesis]',
@@ -85,6 +90,7 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               f.outputKey('tab'),
               conditions.kinesis_condition
             ),
+
 
             f.rule_1m(
               'Home -> Shift [Kinesis]',

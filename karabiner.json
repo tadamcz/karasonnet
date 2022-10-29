@@ -258,27 +258,48 @@
                   ]
                },
                {
-                  "description": "PrintScr -> Switch windows of current application [Kinesis]",
+                  "description": "Hyper + 2 -> MacOS native screenshot (for videos)",
                   "manipulators": [
                      {
-                        "conditions": [
-                           {
-                              "identifiers": [
-                                 {
-                                    "description": "Kinesis Advantage 2",
-                                    "is_keyboard": true,
-                                    "is_pointing_device": false,
-                                    "product_id": 258,
-                                    "vendor_id": 10730
-                                 }
-                              ],
-                              "type": "device_if"
-                           }
-                        ],
                         "description": "",
                         "from": {
-                           "key_code": "print_screen",
+                           "key_code": "2",
                            "modifiers": {
+                              "mandatory": [
+                                 "shift",
+                                 "command",
+                                 "control",
+                                 "option"
+                              ],
+                              "optional": [
+                                 "any"
+                              ]
+                           }
+                        },
+                        "to": [
+                           {
+                              "key_code": "5",
+                              "modifiers": [
+                                 "command",
+                                 "shift"
+                              ]
+                           }
+                        ],
+                        "type": "basic"
+                     }
+                  ]
+               },
+               {
+                  "description": "Option + Tab -> Switch windows of current application",
+                  "manipulators": [
+                     {
+                        "description": "",
+                        "from": {
+                           "key_code": "tab",
+                           "modifiers": {
+                              "mandatory": [
+                                 "option"
+                              ],
                               "optional": [
                                  "any"
                               ]
