@@ -74,8 +74,11 @@ local rule(description, manipulators) = {
   //
   // key_is_modifier (boolean, optional)
   //   removes entire 'modifiers' object; only use when <key> is a modifier itself
-  input(key, modifiers=null, key_is_modifier=false):: {
-    key_code: key,
+  //
+  // key_code (string, optional)
+  //   type of output key code; change the default value for non-typical keys, e.g. media keys
+  input(key, modifiers=null, key_is_modifier=false, key_code='key_code'):: {
+    [key_code]: key,
     [if key_is_modifier then null else 'modifiers']: {
       [if modifiers != null then 'mandatory']: modifiers,
       optional: ['any'],

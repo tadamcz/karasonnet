@@ -14,4 +14,11 @@
     vendor_id: 1452,
     description: 'Apple Internal Keyboard',
   },
+
+  mx_vertical_identifier: {
+    vendor_id: 1133,
+    product_id: 45088,
+    is_pointing_device: true,
+    is_keyboard: false,
+  },
 }

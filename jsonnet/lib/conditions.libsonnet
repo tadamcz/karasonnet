@@ -17,4 +17,20 @@ local devices = import 'devices.libsonnet';
     type: 'variable_if',
     value: 1,
   }],
+
+  unless_finder: {
+    type: 'frontmost_application_unless',
+    bundle_identifiers: [
+      '^com\\.apple\\.finder$',
+    ],
+  },
+
+  if_finder: {
+    type: 'frontmost_application_if',
+    bundle_identifiers: [
+      '^com\\.apple\\.finder$',
+    ],
+  },
+
+
 }

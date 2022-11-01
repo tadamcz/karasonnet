@@ -14,6 +14,14 @@
                   "description": "Paste without formatting",
                   "manipulators": [
                      {
+                        "conditions": [
+                           {
+                              "bundle_identifiers": [
+                                 "^com\\.apple\\.finder$"
+                              ],
+                              "type": "frontmost_application_unless"
+                           }
+                        ],
                         "description": "",
                         "from": {
                            "key_code": "v",
@@ -34,6 +42,67 @@
                                  "option",
                                  "command",
                                  "shift"
+                              ]
+                           }
+                        ],
+                        "type": "basic"
+                     }
+                  ]
+               },
+               {
+                  "description": "Mouse back/forward buttons in Finder",
+                  "manipulators": [
+                     {
+                        "conditions": [
+                           {
+                              "bundle_identifiers": [
+                                 "^com\\.apple\\.finder$"
+                              ],
+                              "type": "frontmost_application_if"
+                           }
+                        ],
+                        "description": "",
+                        "from": {
+                           "modifiers": {
+                              "optional": [
+                                 "any"
+                              ]
+                           },
+                           "pointing_button": "button4"
+                        },
+                        "to": [
+                           {
+                              "key_code": "open_bracket",
+                              "modifiers": [
+                                 "command"
+                              ]
+                           }
+                        ],
+                        "type": "basic"
+                     },
+                     {
+                        "conditions": [
+                           {
+                              "bundle_identifiers": [
+                                 "^com\\.apple\\.finder$"
+                              ],
+                              "type": "frontmost_application_if"
+                           }
+                        ],
+                        "description": "",
+                        "from": {
+                           "modifiers": {
+                              "optional": [
+                                 "any"
+                              ]
+                           },
+                           "pointing_button": "button5"
+                        },
+                        "to": [
+                           {
+                              "key_code": "close_bracket",
+                              "modifiers": [
+                                 "command"
                               ]
                            }
                         ],
@@ -258,7 +327,7 @@
                   ]
                },
                {
-                  "description": "Hyper + 2 -> MacOS native screenshot (for videos)",
+                  "description": "Hyper + 2 -> MacOS native screenshot",
                   "manipulators": [
                      {
                         "description": "",
@@ -1052,6 +1121,16 @@
                },
                "ignore": false,
                "manipulate_caps_lock_led": true
+            },
+            {
+               "identifiers": {
+                  "is_keyboard": false,
+                  "is_pointing_device": true,
+                  "product_id": 45088,
+                  "vendor_id": 1133
+               },
+               "ignore": false,
+               "modify_events": true
             }
          ],
          "name": "Generated from karabiner.jsonnet",

@@ -37,6 +37,24 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               'Paste without formatting',
               f.input('v', ['command', 'option']),
               f.outputKey('v', ['option', 'command', 'shift']),
+              [conditions.unless_finder]  // In Finder, Command+Option+V is used to move files
+            ),
+
+            f.rule(
+              'Mouse back/forward buttons in Finder',
+              [
+                f.manipulator(
+                  f.input('button4', key_code='pointing_button'),
+                  f.outputKey('open_bracket', ['command']),
+                  [conditions.if_finder],
+                ),
+
+                f.manipulator(
+                  f.input('button5', key_code='pointing_button'),
+                  f.outputKey('close_bracket', ['command']),
+                  [conditions.if_finder]
+                ),
+              ]
             ),
 
             f.rule(
@@ -187,6 +205,11 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
             ignore: false,
             manipulate_caps_lock_led: true,
             fn_function_keys: map_function_keys_to_self,
+          },
+          {
+            identifiers: devices.mx_vertical_identifier,
+            ignore: false,
+            modify_events: true,
           },
         ],
       },
