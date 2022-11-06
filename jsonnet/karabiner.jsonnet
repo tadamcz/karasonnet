@@ -81,6 +81,21 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               f.outputKey('slash', ['command', 'shift']),
             ),
 
+            f.rule(
+              'Hyper + up/down arrows -> Scroll up/down',
+              [
+                f.manipulator(
+                  f.input('down_arrow', keys.hyper),
+                  f.outputKey({ vertical_wheel: 150 }, key_code='mouse_key'),
+                ),
+
+                f.manipulator(
+                  f.input('up_arrow', keys.hyper),
+                  f.outputKey({ vertical_wheel: -150 }, key_code='mouse_key'),
+                ),
+              ]
+            ),
+
             f.rule_1m(
               // For videos. Other shortcuts are defined in Shottr.
               'Hyper + 2 -> MacOS native screenshot',

@@ -327,6 +327,61 @@
                   ]
                },
                {
+                  "description": "Hyper + up/down arrows -> Scroll up/down",
+                  "manipulators": [
+                     {
+                        "description": "",
+                        "from": {
+                           "key_code": "down_arrow",
+                           "modifiers": {
+                              "mandatory": [
+                                 "shift",
+                                 "command",
+                                 "control",
+                                 "option"
+                              ],
+                              "optional": [
+                                 "any"
+                              ]
+                           }
+                        },
+                        "to": [
+                           {
+                              "mouse_key": {
+                                 "vertical_wheel": 150
+                              }
+                           }
+                        ],
+                        "type": "basic"
+                     },
+                     {
+                        "description": "",
+                        "from": {
+                           "key_code": "up_arrow",
+                           "modifiers": {
+                              "mandatory": [
+                                 "shift",
+                                 "command",
+                                 "control",
+                                 "option"
+                              ],
+                              "optional": [
+                                 "any"
+                              ]
+                           }
+                        },
+                        "to": [
+                           {
+                              "mouse_key": {
+                                 "vertical_wheel": -150
+                              }
+                           }
+                        ],
+                        "type": "basic"
+                     }
+                  ]
+               },
+               {
                   "description": "Hyper + 2 -> MacOS native screenshot",
                   "manipulators": [
                      {
