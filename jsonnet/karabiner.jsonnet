@@ -57,6 +57,44 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               ]
             ),
 
+
+            f.rule(
+              'Evoluent mouse buttons',
+              [
+                f.manipulator(  //
+                  f.input('button4', key_code='pointing_button'),
+                  f.outputKey('button5', key_code='pointing_button'),
+                  conditions.evoluent_d_condition,
+                  description='Evoluent left thumb button --> back'
+                ),
+
+                f.manipulator(
+                  f.input('button6', key_code='pointing_button'),
+                  f.outputKey('button4', key_code='pointing_button'),
+                  conditions.evoluent_d_condition,
+                  description='Evoluent right thumb button --> forward'
+                ),
+
+                f.manipulator(  // For consistency with other mice
+                  f.input('button5', key_code='pointing_button'),
+                  f.outputKey('button3', key_code='pointing_button'),
+                  conditions.evoluent_d_condition,
+                  description='Evoluent scroll wheel button --> Middle click'
+                ),
+
+                f.manipulator(
+                  f.input('button3', key_code='pointing_button'),
+                  f.outputKey('button1', key_code='pointing_button', modifiers=['command']),
+                  conditions.evoluent_d_condition,
+                  description='Evoluent middle finger button --> Cmd+Click'
+                ),
+
+
+              ]
+
+            ),
+
+
             f.rule(
               'Right hand key cluster for word scrolling [Kinesis]',
               [
@@ -223,6 +261,11 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
           },
           {
             identifiers: devices.mx_vertical_identifier,
+            ignore: false,
+            modify_events: true,
+          },
+          {
+            identifiers: devices.evoluent_d_identifier,
             ignore: false,
             modify_events: true,
           },

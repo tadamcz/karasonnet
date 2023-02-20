@@ -12,6 +12,11 @@ local devices = import 'devices.libsonnet';
     identifiers: [devices.apple_identifier],
   }],
 
+  evoluent_d_condition: [{
+    type: 'device_if',
+    identifiers: [devices.evoluent_d_identifier],
+  }],
+
   layer(name):: [{
     name: 'layer_' + name,
     type: 'variable_if',

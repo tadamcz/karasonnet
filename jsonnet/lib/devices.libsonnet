@@ -20,5 +20,14 @@
     product_id: 45088,
     is_pointing_device: true,
     is_keyboard: false,
+    description: 'MX Vertical',
+  },
+
+  evoluent_d_identifier: {
+    is_keyboard: false,
+    is_pointing_device: true,
+    product_id: 407,
+    vendor_id: 6780,
+    description: 'Evoluent VerticalMouse D',
   },
 }

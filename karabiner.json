@@ -111,6 +111,138 @@
                   ]
                },
                {
+                  "description": "Evoluent mouse buttons",
+                  "manipulators": [
+                     {
+                        "conditions": [
+                           {
+                              "identifiers": [
+                                 {
+                                    "description": "Evoluent VerticalMouse D",
+                                    "is_keyboard": false,
+                                    "is_pointing_device": true,
+                                    "product_id": 407,
+                                    "vendor_id": 6780
+                                 }
+                              ],
+                              "type": "device_if"
+                           }
+                        ],
+                        "description": "Evoluent left thumb button --> back",
+                        "from": {
+                           "modifiers": {
+                              "optional": [
+                                 "any"
+                              ]
+                           },
+                           "pointing_button": "button4"
+                        },
+                        "to": [
+                           {
+                              "pointing_button": "button5"
+                           }
+                        ],
+                        "type": "basic"
+                     },
+                     {
+                        "conditions": [
+                           {
+                              "identifiers": [
+                                 {
+                                    "description": "Evoluent VerticalMouse D",
+                                    "is_keyboard": false,
+                                    "is_pointing_device": true,
+                                    "product_id": 407,
+                                    "vendor_id": 6780
+                                 }
+                              ],
+                              "type": "device_if"
+                           }
+                        ],
+                        "description": "Evoluent right thumb button --> forward",
+                        "from": {
+                           "modifiers": {
+                              "optional": [
+                                 "any"
+                              ]
+                           },
+                           "pointing_button": "button6"
+                        },
+                        "to": [
+                           {
+                              "pointing_button": "button4"
+                           }
+                        ],
+                        "type": "basic"
+                     },
+                     {
+                        "conditions": [
+                           {
+                              "identifiers": [
+                                 {
+                                    "description": "Evoluent VerticalMouse D",
+                                    "is_keyboard": false,
+                                    "is_pointing_device": true,
+                                    "product_id": 407,
+                                    "vendor_id": 6780
+                                 }
+                              ],
+                              "type": "device_if"
+                           }
+                        ],
+                        "description": "Evoluent scroll wheel button --> Middle click",
+                        "from": {
+                           "modifiers": {
+                              "optional": [
+                                 "any"
+                              ]
+                           },
+                           "pointing_button": "button5"
+                        },
+                        "to": [
+                           {
+                              "pointing_button": "button3"
+                           }
+                        ],
+                        "type": "basic"
+                     },
+                     {
+                        "conditions": [
+                           {
+                              "identifiers": [
+                                 {
+                                    "description": "Evoluent VerticalMouse D",
+                                    "is_keyboard": false,
+                                    "is_pointing_device": true,
+                                    "product_id": 407,
+                                    "vendor_id": 6780
+                                 }
+                              ],
+                              "type": "device_if"
+                           }
+                        ],
+                        "description": "Evoluent middle finger button --> Cmd+Click",
+                        "from": {
+                           "modifiers": {
+                              "optional": [
+                                 "any"
+                              ]
+                           },
+                           "pointing_button": "button3"
+                        },
+                        "to": [
+                           {
+                              "modifiers": [
+                                 "command"
+                              ],
+                              "pointing_button": "button1"
+                           }
+                        ],
+                        "type": "basic"
+                     }
+                  ]
+               },
+               {
                   "description": "Right hand key cluster for word scrolling [Kinesis]",
                   "manipulators": [
                      {
@@ -1179,10 +1311,22 @@
             },
             {
                "identifiers": {
+                  "description": "MX Vertical",
                   "is_keyboard": false,
                   "is_pointing_device": true,
                   "product_id": 45088,
                   "vendor_id": 1133
+               },
+               "ignore": false,
+               "modify_events": true
+            },
+            {
+               "identifiers": {
+                  "description": "Evoluent VerticalMouse D",
+                  "is_keyboard": false,
+                  "is_pointing_device": true,
+                  "product_id": 407,
+                  "vendor_id": 6780
                },
                "ignore": false,
                "modify_events": true
