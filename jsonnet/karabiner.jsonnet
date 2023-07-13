@@ -45,13 +45,13 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               [
                 f.manipulator(
                   f.input('button4', key_code='pointing_button'),
-                  f.outputKey('open_bracket', ['command']),
+                  f.outputKey('close_bracket', ['command']),
                   [conditions.if_finder],
                 ),
 
                 f.manipulator(
                   f.input('button5', key_code='pointing_button'),
-                  f.outputKey('close_bracket', ['command']),
+                  f.outputKey('open_bracket', ['command']),
                   [conditions.if_finder]
                 ),
               ]
@@ -63,14 +63,14 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
               [
                 f.manipulator(  //
                   f.input('button4', key_code='pointing_button'),
-                  f.outputKey('button5', key_code='pointing_button'),
+                  f.outputKey('close_bracket', ['command']),
                   conditions.evoluent_d_condition,
                   description='Evoluent left thumb button --> back'
                 ),
 
                 f.manipulator(
                   f.input('button6', key_code='pointing_button'),
-                  f.outputKey('button4', key_code='pointing_button'),
+                  f.outputKey('open_bracket', ['command']),
                   conditions.evoluent_d_condition,
                   description='Evoluent right thumb button --> forward'
                 ),

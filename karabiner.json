@@ -72,7 +72,7 @@
                         },
                         "to": [
                            {
-                              "key_code": "open_bracket",
+                              "key_code": "close_bracket",
                               "modifiers": [
                                  "command"
                               ]
@@ -100,7 +100,7 @@
                         },
                         "to": [
                            {
-                              "key_code": "close_bracket",
+                              "key_code": "open_bracket",
                               "modifiers": [
                                  "command"
                               ]
@@ -139,7 +139,10 @@
                         },
                         "to": [
                            {
-                              "pointing_button": "button5"
+                              "key_code": "close_bracket",
+                              "modifiers": [
+                                 "command"
+                              ]
                            }
                         ],
                         "type": "basic"
@@ -170,7 +173,10 @@
                         },
                         "to": [
                            {
-                              "pointing_button": "button4"
+                              "key_code": "open_bracket",
+                              "modifiers": [
+                                 "command"
+                              ]
                            }
                         ],
                         "type": "basic"
