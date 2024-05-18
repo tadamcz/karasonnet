@@ -4,7 +4,12 @@ local devices = import 'devices.libsonnet';
 {
   kinesis_condition: [{
     type: 'device_if',
-    identifiers: [devices.kinesis_identifier],
+    identifiers: [devices.kinesis_a2_identifier, devices.kinesis_a360_identifier],
+  }],
+
+  kinesis_a360_condition: [{
+    type: 'device_if',
+    identifiers: [devices.kinesis_a360_identifier],
   }],
 
   apple_condition: [{

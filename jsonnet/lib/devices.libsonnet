@@ -1,10 +1,18 @@
 {
-  kinesis_identifier: {
+  kinesis_a2_identifier: {
     is_keyboard: true,
     is_pointing_device: false,
     product_id: 258,
     vendor_id: 10730,
     description: 'Kinesis Advantage 2',
+  },
+
+  kinesis_a360_identifier: {
+    is_keyboard: true,
+    is_pointing_device: false,
+    product_id: 24926,
+    vendor_id: 7504,
+    description: 'Kinesis Advantage 360 Pro',
   },
 
   apple_identifier: {

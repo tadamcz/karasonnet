@@ -251,13 +251,49 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
           ],
         },
 
+
         devices: [
           {
-            identifiers: devices.kinesis_identifier,
+            identifiers: devices.kinesis_a2_identifier,
             disable_built_in_keyboard_if_exists: false,
             ignore: false,
             manipulate_caps_lock_led: true,
             fn_function_keys: map_function_keys_to_self,
+          },
+          {
+            identifiers: devices.kinesis_a360_identifier,
+            ignore: false,
+            modify_events: true,
+            fn_function_keys: map_function_keys_to_self,
+            simple_modifications: [
+              // MacOS layout must be specified explicitly with the Kinesis 360, unlike the
+              // Kinesis Advantage 2
+              {
+                from: {
+                  key_code: 'right_control',
+                },
+                to: {
+                  key_code: 'right_command',
+                },
+              },
+              {
+                from: {
+                  key_code: 'left_command',
+                },
+                to: {
+                  key_code: 'right_control',
+                },
+              },
+              {
+                from: {
+                  key_code: 'left_control',
+                },
+                to: {
+                  key_code: 'left_command',
+                },
+              },
+
+            ],
           },
           {
             identifiers: devices.mx_vertical_identifier,
