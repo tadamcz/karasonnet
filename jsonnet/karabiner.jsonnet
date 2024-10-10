@@ -292,7 +292,43 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
                   key_code: 'left_command',
                 },
               },
-
+              // Map the four special keys (1, 2, 3, 4) on the Kinesis 360 to additional function
+              // keys that don't exist on the physical keyboard. Note that f14 and f15 need to be
+              // skipped because (at least on my Mac) they map to the brightness keys.
+              // You can then map these function keys to actions in individual applications.
+              // e.g. I map f13 to the rename action in my IDE.
+              {
+                from: {
+                  key_code: 'keypad_1',
+                },
+                to: {
+                  key_code: 'f13',
+                },
+              },
+              {
+                from: {
+                  key_code: 'keypad_2',
+                },
+                to: {
+                  key_code: 'f16',
+                },
+              },
+              {
+                from: {
+                  key_code: 'keypad_3',
+                },
+                to: {
+                  key_code: 'f17',
+                },
+              },
+              {
+                from: {
+                  key_code: 'keypad_4',
+                },
+                to: {
+                  key_code: 'f18',
+                },
+              },
             ],
           },
           {

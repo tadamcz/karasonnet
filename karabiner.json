@@ -1541,6 +1541,38 @@
                      "to": {
                         "key_code": "left_command"
                      }
+                  },
+                  {
+                     "from": {
+                        "key_code": "keypad_1"
+                     },
+                     "to": {
+                        "key_code": "f13"
+                     }
+                  },
+                  {
+                     "from": {
+                        "key_code": "keypad_2"
+                     },
+                     "to": {
+                        "key_code": "f16"
+                     }
+                  },
+                  {
+                     "from": {
+                        "key_code": "keypad_3"
+                     },
+                     "to": {
+                        "key_code": "f17"
+                     }
+                  },
+                  {
+                     "from": {
+                        "key_code": "keypad_4"
+                     },
+                     "to": {
+                        "key_code": "f18"
+                     }
                   }
                ]
             },
