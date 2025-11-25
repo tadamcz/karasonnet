@@ -15,6 +15,14 @@
     description: 'Kinesis Advantage 360 Pro',
   },
 
+  ergo_k860_identifier: {
+    is_keyboard: true,
+    is_pointing_device: true,
+    product_id: 45913,
+    vendor_id: 1133,
+    description: 'Logitech Ergo K860',
+  },
+
   apple_identifier: {
     is_keyboard: true,
     is_pointing_device: false,

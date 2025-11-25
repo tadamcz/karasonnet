@@ -261,6 +261,13 @@ local map_function_keys_to_self = [{ from: { key_code: 'f1' }, to: [{ key_code: 
             fn_function_keys: map_function_keys_to_self,
           },
           {
+            identifiers: devices.ergo_k860_identifier,
+            disable_built_in_keyboard_if_exists: false,
+            ignore: false,
+            manipulate_caps_lock_led: true,
+            fn_function_keys: map_function_keys_to_self,
+          },
+          {
             identifiers: devices.kinesis_a360_identifier,
             ignore: false,
             modify_events: true,

@@ -12,6 +12,11 @@ local devices = import 'devices.libsonnet';
     identifiers: [devices.kinesis_a360_identifier],
   }],
 
+  ergo_k860_condition: [{
+    type: 'device_if',
+    identifiers: [devices.ergo_k860_identifier],
+  }],
+
   apple_condition: [{
     type: 'device_if',
     identifiers: [devices.apple_identifier],
